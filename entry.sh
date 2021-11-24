@@ -22,6 +22,7 @@ if [ "$4" = "true" ]
   then
     echo "Docker Container testing"
     cd $PROJECT_PATH
+    echo $PWD
     bundle install
     ceedling test:all
 fi
