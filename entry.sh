@@ -21,8 +21,9 @@ ls $HARMONY_ROOT/apps
 if [ "$4" = "true" ]
   then
     echo "Docker Container testing"
+    cp Gemfile $PROJECT_PATH/Gemfile
+    cp Gemfile.lock $PROJECT_PATH/Gemfile.lock
     cd $PROJECT_PATH
-    echo $PWD
     bundle install
     ceedling test:all
 fi
