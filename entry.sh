@@ -12,9 +12,11 @@ if [ -z "$3" ]
 else
   PROJECT_PATH=$HARMONY_ROOT/apps/$3
   mkdir -p $PROJECT_PATH
-  cp -r $1 $PROJECT_PATH/$1
-  cp -r src $PROJECT_PATH/src
-  cp -r test $PROJECT_PATH/test
+  mv -r $1 $PROJECT_PATH/$1
+  mv -r src $PROJECT_PATH/src
+  mv -r test $PROJECT_PATH/test
+  mv project.yml $PROJECT_PATH/project.yml
+  mv rakefile.rb $PROJECT_PATH/rakefile.rb
 fi
 
 ls $HARMONY_ROOT/apps
@@ -30,9 +32,17 @@ if [ "$4" = "true" ]
     export HARMONY_ROOT
     export COMPILER_ROOT
     export MPLABX_ROOT
+    
+    if [ -z "$3" ]
+      then
+        
+    elif [  ]
+
+    fi
+    
     rake options:SB3 test:all || echo ">>> SB3 Unit test failed!!!" && exit 3
-    rake options:SB75 test:all || echo ">>> SB75 Unit test failed!!!" exit 3
-    rake options:SB4 test:all || echo ">>> SB4 Unit test failed!!!" exit 3
+    rake options:SB75 test:all || echo ">>> SB75 Unit test failed!!!" && exit 3
+    rake options:SB4 test:all || echo ">>> SB4 Unit test failed!!!" && exit 3
 fi
 
 echo "Docker Container Building $1:$2"
