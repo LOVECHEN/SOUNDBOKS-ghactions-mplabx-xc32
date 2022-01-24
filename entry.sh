@@ -12,11 +12,11 @@ if [ -z "$3" ]
 else
   PROJECT_PATH=$HARMONY_ROOT/apps/$3
   mkdir -p $PROJECT_PATH
-  mv -r $1 $PROJECT_PATH/$1
-  mv -r src $PROJECT_PATH/src
-  mv -r test $PROJECT_PATH/test
-  mv project.yml $PROJECT_PATH/project.yml
-  mv rakefile.rb $PROJECT_PATH/rakefile.rb
+  cp -r $1 $PROJECT_PATH/$1
+  cp -r src $PROJECT_PATH/src
+  cp -r test $PROJECT_PATH/test
+  cp project.yml $PROJECT_PATH/project.yml
+  cp rakefile.rb $PROJECT_PATH/rakefile.rb
 fi
 
 ls $HARMONY_ROOT/apps
