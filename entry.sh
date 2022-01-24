@@ -1,7 +1,7 @@
 #!/bin/sh
 
 HARMONY_ROOT=/opt/harmony/v2_02_00b/
-COMPILER_ROOT=/opt/xc32/v2.50/
+COMPILER_ROOT=/opt/microchip/xc32/v2.50/
 MPLABX_ROOT=/opt/mplabx/
 
 PROJECT_PATH=./
