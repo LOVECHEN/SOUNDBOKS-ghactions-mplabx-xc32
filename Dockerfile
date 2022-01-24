@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN pwd
 
@@ -9,8 +9,8 @@ RUN dpkg --add-architecture i386 && apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 RUN sudo apt-get update && \
-  sudo apt-get -y install ruby-full && \
-  sudo gem install bundler
+  sudo apt-get -y install ruby=2.7.2 && \ # Was ruby-full
+  sudo gem install bundler=2.1.4
 
 RUN wget -nv -O /tmp/xc32 http://ww1.microchip.com/downloads/en/DeviceDoc/xc32-v2.50-full-install-linux-installer.run && \
   sudo chmod +x /tmp/xc32 &&  \
