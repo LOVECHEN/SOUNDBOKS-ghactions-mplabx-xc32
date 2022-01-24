@@ -10,8 +10,9 @@ RUN dpkg --add-architecture i386 && apt-get update && \
 
 RUN sudo apt-get update
 RUN sudo apt-get -y install ruby -V 2.7.2
-RUN sudo gem install bundler -v 2.3.5
+#RUN sudo gem install bundler -v 2.3.5
 RUN sudo gem install ceedling -v 0.31.1
+RUN sudo gem install dotenv -v 2.7.6
 
 RUN wget -nv -O /tmp/xc32 http://ww1.microchip.com/downloads/en/DeviceDoc/xc32-v2.50-full-install-linux-installer.run && \
   sudo chmod +x /tmp/xc32 &&  \
