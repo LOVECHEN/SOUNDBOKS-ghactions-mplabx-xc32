@@ -26,9 +26,10 @@ if [ "$4" = "true" ]
     #cp Gemfile.lock $PROJECT_PATH/Gemfile.lock
     #cd $PROJECT_PATH
     #bundle install
-    ceedling options:SB3 test:all
-    ceedling options:SB75 test:all
-    ceedling options:SB4 test:all
+    cd $PROJECT_PATH
+    rake options:SB3 test:all
+    rake options:SB75 test:all
+    rake options:SB4 test:all
 fi
 
 echo "Docker Container Building $1:$2"
