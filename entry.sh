@@ -22,10 +22,10 @@ ls $HARMONY_ROOT/apps
 if [ "$4" = "true" ]
   then
     echo "Docker Container testing"
-    cp Gemfile $PROJECT_PATH/Gemfile
-    cp Gemfile.lock $PROJECT_PATH/Gemfile.lock
-    cd $PROJECT_PATH
-    bundle install
+    #cp Gemfile $PROJECT_PATH/Gemfile
+    #cp Gemfile.lock $PROJECT_PATH/Gemfile.lock
+    #cd $PROJECT_PATH
+    #bundle install
     ceedling options:SB3 test:all
     ceedling options:SB75 test:all
     ceedling options:SB4 test:all
