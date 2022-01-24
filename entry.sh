@@ -14,6 +14,7 @@ else
   mkdir -p $PROJECT_PATH
   cp -r $1 $PROJECT_PATH/$1
   cp -r src $PROJECT_PATH/src
+  cp -r test $PROJECT_PATH/test
 fi
 
 ls $HARMONY_ROOT/apps
@@ -25,7 +26,9 @@ if [ "$4" = "true" ]
     cp Gemfile.lock $PROJECT_PATH/Gemfile.lock
     cd $PROJECT_PATH
     bundle install
-    ceedling test:all
+    ceedling options:SB3 test:all
+    ceedling options:SB75 test:all
+    ceedling options:SB4 test:all
 fi
 
 echo "Docker Container Building $1:$2"
