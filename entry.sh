@@ -33,16 +33,16 @@ if [ "$4" = "true" ]
     export COMPILER_ROOT
     export MPLABX_ROOT
     
-    if [ -z "$3" ]
+    if [ $2 = "nsb_standalone" ]
       then
-        
-    elif [  ]
-
+        rake options:SB3 test:all || echo ">>> SB3 Unit test failed!!!" && exit 3
+    elif [ $2 = "sb75_standalone" ]
+      then
+        rake options:SB75 test:all || echo ">>> SB75 Unit test failed!!!" && exit 3
+    elif [ $2 = "sherpa3_standalone" ]
+      then
+        rake options:SB4 test:all || echo ">>> SB4 Unit test failed!!!" && exit 3
     fi
-    
-    rake options:SB3 test:all || echo ">>> SB3 Unit test failed!!!" && exit 3
-    rake options:SB75 test:all || echo ">>> SB75 Unit test failed!!!" && exit 3
-    rake options:SB4 test:all || echo ">>> SB4 Unit test failed!!!" && exit 3
 fi
 
 echo "Docker Container Building $1:$2"
