@@ -27,6 +27,9 @@ if [ "$4" = "true" ]
     #cd $PROJECT_PATH
     #bundle install
     cd $PROJECT_PATH
+    export HARMONY_ROOT
+    export COMPILER_ROOT
+    export MPLABX_ROOT
     rake options:SB3 test:all
     rake options:SB75 test:all
     rake options:SB4 test:all
