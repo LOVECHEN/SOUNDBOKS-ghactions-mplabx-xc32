@@ -2,7 +2,7 @@
 
 HARMONY_ROOT=/opt/harmony/v2_02_00b/
 COMPILER_ROOT=/opt/microchip/xc32/v2.50/
-MPLABX_ROOT=/opt/mplabx/
+#MPLABX_ROOT=/opt/mplabx/
 
 PROJECT_PATH=./
 
@@ -31,7 +31,7 @@ if [ "$4" = "true" ]
     cd $PROJECT_PATH
     export HARMONY_ROOT
     export COMPILER_ROOT
-    export MPLABX_ROOT
+    #export MPLABX_ROOT
     
     if [ $2 = "nsb_standalone" ]
       then
