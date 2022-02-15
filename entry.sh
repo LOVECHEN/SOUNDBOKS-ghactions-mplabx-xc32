@@ -31,13 +31,13 @@ if [ "$4" = "true" ]
     
     if [ $2 = "nsb_standalone" ]
       then
-        rake options:SB3 test:all || (echo ">>> SB3 Unit test failed!!!" && exit 3)
+        rake options:SB3 test:all || { echo ">>> SB3 Unit test failed!!!"; exit 3; }
     elif [ $2 = "sb75_standalone" ]
       then
-        rake options:SB75 test:all || (echo ">>> SB75 Unit test failed!!!" && exit 3)
+        rake options:SB75 test:all || { echo ">>> SB75 Unit test failed!!!"; exit 3; }
     elif [ $2 = "sherpa3_standalone" ]
       then
-        rake options:SB4 test:all || (echo ">>> SB4 Unit test failed!!!" && exit 3)
+        rake options:SB4 test:all || { echo ">>> SB4 Unit test failed!!!"; exit 3; }
     fi
 fi
 
